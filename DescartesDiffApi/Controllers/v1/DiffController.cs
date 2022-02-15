@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DescartesDiffApi.Model.v1;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,13 +30,15 @@ namespace DescartesDiffApi.Controllers.v1
 
         // PUT api/<DiffController>/5
         [HttpPut("{id}/{direction}")]
-        public void Put(int id, string direction/*, [FromBody] string value*/)
+        public void Put(int id, string direction, ValueToDiff valueToDiff)
         {
-            if (direction == "right")
+            if (direction == "Right")
             {
+                var base64EncodedBytes = System.Convert.FromBase64String(valueToDiff.data);
+                var base64EncodedBytesDisplay = System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
                 publicId = id;
             }
-            else if (direction == "left")
+            else if (direction == "Left")
             {
                 publicId = id * 2;
             }
