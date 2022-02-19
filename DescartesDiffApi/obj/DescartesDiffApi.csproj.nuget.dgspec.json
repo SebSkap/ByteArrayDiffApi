@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Seb\\source\\repos\\DescartesDiffApi\\DescartesDiffApi\\DescartesDiffApi.csproj": {}
+    "C:\\Users\\Seb\\Source\\Repos\\DescartesDiffApi\\DescartesDiffApi\\DescartesDiffApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Seb\\source\\repos\\DescartesDiffApi\\DescartesDiffApi\\DescartesDiffApi.csproj": {
+    "C:\\Users\\Seb\\Source\\Repos\\DescartesDiffApi\\DescartesDiffApi\\DescartesDiffApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Seb\\source\\repos\\DescartesDiffApi\\DescartesDiffApi\\DescartesDiffApi.csproj",
+        "projectUniqueName": "C:\\Users\\Seb\\Source\\Repos\\DescartesDiffApi\\DescartesDiffApi\\DescartesDiffApi.csproj",
         "projectName": "DescartesDiffApi",
-        "projectPath": "C:\\Users\\Seb\\source\\repos\\DescartesDiffApi\\DescartesDiffApi\\DescartesDiffApi.csproj",
+        "projectPath": "C:\\Users\\Seb\\Source\\Repos\\DescartesDiffApi\\DescartesDiffApi\\DescartesDiffApi.csproj",
         "packagesPath": "C:\\Users\\Seb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Seb\\source\\repos\\DescartesDiffApi\\DescartesDiffApi\\obj\\",
+        "outputPath": "C:\\Users\\Seb\\Source\\Repos\\DescartesDiffApi\\DescartesDiffApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Seb\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,20 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"

@@ -1,0 +1,379 @@
+{
+	"info": {
+		"_postman_id": "badd3732-dd1b-4ae6-b70b-0d3f6b0af872",
+		"name": "DescartesDiffApiTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetEmpty",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Not found test\", function() {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([404,200]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/v1/Diff/99",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"v1",
+						"Diff",
+						"99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutLeft",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Created Left\", function() {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": \"AAAAAA==\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/v1/Diff/99/Left",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"v1",
+						"Diff",
+						"99",
+						"Left"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetJustLeft",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"If only one found, nothing to compare\", function() {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([404,200]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/v1/Diff/99",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"v1",
+						"Diff",
+						"99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutRight",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Created Right\", function() {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": \"AAAAAA==\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/v1/Diff/99/Right",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"v1",
+						"Diff",
+						"99",
+						"Right"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDiffBetweenTwoSameValues",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Values should be equal\", function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/v1/Diff/99",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"v1",
+						"Diff",
+						"99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutRightDifferent",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Updated Right With new value\", function() {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": \"AQABAQ==\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/v1/Diff/99/Right",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"v1",
+						"Diff",
+						"99",
+						"Right"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDiffBetweenTwoDiffValues",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Values should be different\", function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/v1/Diff/99",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"v1",
+						"Diff",
+						"99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutLeftDifferentLength",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Different bytearray length Put\", function() {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": \"BBQQQQQQ\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/v1/Diff/99/Left",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"v1",
+						"Diff",
+						"99",
+						"Left"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDiffSizeNotMatch",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Size Does Not Match\", function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/v1/Diff/99",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"v1",
+						"Diff",
+						"99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutLeftNullValue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Null value\", function() {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/v1/Diff/99/Left",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"v1",
+						"Diff",
+						"99",
+						"Left"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

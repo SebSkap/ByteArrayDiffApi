@@ -1,6 +1,8 @@
+using DescartesDiffApi.Model.v1;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -27,6 +29,10 @@ namespace DescartesDiffApi
         {
 
             services.AddControllers();
+
+            services.AddDbContext<ApiContext>(options => options.UseSqlite("Data Source=./testdb.db"));
+            //services.AddDbContext<ApiContext>(options => options.UseSqlite(Configuration.GetConnectionString("DiffDb")));
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DescartesDiffApi", Version = "v1" });

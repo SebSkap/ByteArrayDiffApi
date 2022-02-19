@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31702.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DescartesDiffApi", "DescartesDiffApi\DescartesDiffApi.csproj", "{F851823A-D08F-47EC-829B-6AED9C14F953}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DescartesDiffApi", "DescartesDiffApi\DescartesDiffApi.csproj", "{F851823A-D08F-47EC-829B-6AED9C14F953}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DescartesDiffApiTest", "DescartesDiffApiTest\DescartesDiffApiTest.csproj", "{760CC293-C260-41FA-876E-BACC6AA62985}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F851823A-D08F-47EC-829B-6AED9C14F953}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F851823A-D08F-47EC-829B-6AED9C14F953}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F851823A-D08F-47EC-829B-6AED9C14F953}.Release|Any CPU.Build.0 = Release|Any CPU
+		{760CC293-C260-41FA-876E-BACC6AA62985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{760CC293-C260-41FA-876E-BACC6AA62985}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{760CC293-C260-41FA-876E-BACC6AA62985}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{760CC293-C260-41FA-876E-BACC6AA62985}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
