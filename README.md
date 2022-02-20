@@ -19,4 +19,4 @@ with initial value as localhost (example: "localhost:14931"), press Save in the 
 6. Import Postman integration test collection by using File - Import... and selecting "DescartesDiffApiTest.postman_collection.json" file 
 from root project folder
 
-7. Go to Collections, select DescartesDiffApiTest and press "Run" in the upper right corner to execute test steps
+7. Go to Collections, select DescartesDiffApiTest and press "Run" in the upper right corner to execute integration test steps
